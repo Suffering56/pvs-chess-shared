@@ -3,6 +3,10 @@ package com.example.chess.shared
 import com.example.chess.shared.enums.Side
 import java.lang.UnsupportedOperationException
 
+/**
+ * @author v.peschaniy
+ *      Date: 22.07.2019
+ */
 enum class PlayerSide {
     SIDE_WHITE,
     SIDE_BLACK,

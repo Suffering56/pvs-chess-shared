@@ -1,5 +1,9 @@
 package com.example.chess.shared.enums
 
+/**
+ * @author v.peschaniy
+ *      Date: 22.07.2019
+ */
 enum class PieceType(
     val value: Int,
     val startColumnIndex: Int = 0

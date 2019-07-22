@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.node.JsonNodeFactory
 import com.fasterxml.jackson.databind.node.ObjectNode
 
+/**
+ * @author v.peschaniy
+ *      Date: 22.07.2019
+ */
 enum class Piece(
     val side: Side,
     val type: PieceType,
