@@ -1,13 +1,12 @@
-package com.example.chess.shared.dto
+package com.example.chess.shared.enums
 
-import com.example.chess.shared.enums.Side
 import java.lang.UnsupportedOperationException
 
 /**
  * @author v.peschaniy
  *      Date: 22.07.2019
  */
-enum class SideDTO {
+enum class ExtendedSide {
     SIDE_WHITE,
     SIDE_BLACK,
     VIEWER,
@@ -17,12 +16,12 @@ enum class SideDTO {
         return when (this) {
             SIDE_WHITE -> Side.WHITE
             SIDE_BLACK -> Side.BLACK
-            else -> throw UnsupportedOperationException("can't transform SideDTO to Side: $this")
+            else -> throw UnsupportedOperationException("can't transform ExtendedSide to Side: $this")
         }
     }
 
     companion object {
-        fun ofSide(side: Side): SideDTO {
+        fun ofSide(side: Side): ExtendedSide {
             return when (side) {
                 Side.WHITE -> SIDE_WHITE
                 Side.BLACK -> SIDE_BLACK

@@ -1,7 +1,7 @@
 package com.example.chess.shared.dto
 
+import com.example.chess.shared.enums.ExtendedSide
 import com.example.chess.shared.enums.GameMode
-import java.text.FieldPosition
 
 /**
  * @author v.peschaniy
@@ -9,6 +9,5 @@ import java.text.FieldPosition
  */
 data class GameDTO(
     val id: Long,
-    val position: Int,
-    val mode: GameMode
+    val position: Int
 )
