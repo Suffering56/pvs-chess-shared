@@ -8,14 +8,13 @@ import com.fasterxml.jackson.databind.node.ObjectNode
  * @author v.peschaniy
  *      Date: 22.07.2019
  */
-enum class Piece(
+enum class Piece private constructor(
     val side: Side,
     val type: PieceType,
     private val jsonNode: ObjectNode = JsonNodeFactory.instance.objectNode()
         .put("type", type.toString())
         .put("side", side.toString())
 ) {
-
     PAWN_WHITE(Side.WHITE, PieceType.PAWN),
     KNIGHT_WHITE(Side.WHITE, PieceType.KNIGHT),
     BISHOP_WHITE(Side.WHITE, PieceType.BISHOP),
@@ -29,28 +28,6 @@ enum class Piece(
     ROOK_BLACK(Side.BLACK, PieceType.ROOK),
     QUEEN_BLACK(Side.BLACK, PieceType.QUEEN),
     KING_BLACK(Side.BLACK, PieceType.KING);
-
-    fun of(side: Side, type: PieceType): Piece {
-        return if (side === Side.WHITE) {
-            when (type) {
-                PieceType.PAWN -> PAWN_WHITE
-                PieceType.KNIGHT -> KNIGHT_WHITE
-                PieceType.BISHOP -> BISHOP_WHITE
-                PieceType.ROOK -> ROOK_WHITE
-                PieceType.QUEEN -> QUEEN_WHITE
-                PieceType.KING -> KING_WHITE
-            }
-        } else {
-            when (type) {
-                PieceType.PAWN -> PAWN_BLACK
-                PieceType.KNIGHT -> KNIGHT_BLACK
-                PieceType.BISHOP -> BISHOP_BLACK
-                PieceType.ROOK -> ROOK_BLACK
-                PieceType.QUEEN -> QUEEN_BLACK
-                PieceType.KING -> KING_BLACK
-            }
-        }
-    }
 
     @JsonValue
     fun toJson(): ObjectNode {
@@ -67,5 +44,30 @@ enum class Piece(
 
     fun isRook(): Boolean {
         return type === PieceType.ROOK
+    }
+
+    companion object {
+
+        fun of(side: Side, type: PieceType): Piece {
+            return if (side === Side.WHITE) {
+                when (type) {
+                    PieceType.PAWN -> PAWN_WHITE
+                    PieceType.KNIGHT -> KNIGHT_WHITE
+                    PieceType.BISHOP -> BISHOP_WHITE
+                    PieceType.ROOK -> ROOK_WHITE
+                    PieceType.QUEEN -> QUEEN_WHITE
+                    PieceType.KING -> KING_WHITE
+                }
+            } else {
+                when (type) {
+                    PieceType.PAWN -> PAWN_BLACK
+                    PieceType.KNIGHT -> KNIGHT_BLACK
+                    PieceType.BISHOP -> BISHOP_BLACK
+                    PieceType.ROOK -> ROOK_BLACK
+                    PieceType.QUEEN -> QUEEN_BLACK
+                    PieceType.KING -> KING_BLACK
+                }
+            }
+        }
     }
 }

@@ -7,7 +7,6 @@ import com.example.chess.shared.enums.Piece
  *      Date: 22.07.2019
  */
 data class CellDTO(
-    val rowIndex: Int,
-    val columnIndex: Int,
-    val piece: Piece
+    val pointDTO: PointDTO,
+    val piece: Piece?
 )
