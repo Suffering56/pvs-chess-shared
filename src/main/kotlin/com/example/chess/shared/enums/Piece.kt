@@ -10,10 +10,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode
  */
 enum class Piece private constructor(
     val side: Side,
-    val type: PieceType,
-    private val jsonNode: ObjectNode = JsonNodeFactory.instance.objectNode()
-        .put("type", type.toString())
-        .put("side", side.toString())
+    val type: PieceType
 ) {
     PAWN_WHITE(Side.WHITE, PieceType.PAWN),
     KNIGHT_WHITE(Side.WHITE, PieceType.KNIGHT),
@@ -28,11 +25,6 @@ enum class Piece private constructor(
     ROOK_BLACK(Side.BLACK, PieceType.ROOK),
     QUEEN_BLACK(Side.BLACK, PieceType.QUEEN),
     KING_BLACK(Side.BLACK, PieceType.KING);
-
-    @JsonValue
-    fun toJson(): ObjectNode {
-        return jsonNode
-    }
 
     fun isPawn(): Boolean {
         return type === PieceType.PAWN

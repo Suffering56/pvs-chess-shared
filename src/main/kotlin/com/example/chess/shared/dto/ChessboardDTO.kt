@@ -1,5 +1,7 @@
 package com.example.chess.shared.dto
 
+import com.example.chess.shared.ArrayTable
+import com.example.chess.shared.enums.Piece
 import com.example.chess.shared.enums.Side
 
 /**
@@ -8,6 +10,6 @@ import com.example.chess.shared.enums.Side
  */
 data class ChessboardDTO(
     val position: Int,
-    val cellsMatrix: List<List<CellDTO>>,
+    val matrix: ArrayTable<CellDTO>,
     val underCheckSide: Side?
 )
