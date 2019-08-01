@@ -1,8 +1,6 @@
 package com.example.chess.shared.enums
 
-import com.fasterxml.jackson.annotation.JsonValue
-import com.fasterxml.jackson.databind.node.JsonNodeFactory
-import com.fasterxml.jackson.databind.node.ObjectNode
+import java.io.Serializable
 
 /**
  * @author v.peschaniy
@@ -11,7 +9,8 @@ import com.fasterxml.jackson.databind.node.ObjectNode
 enum class Piece private constructor(
     val side: Side,
     val type: PieceType
-) {
+) : Serializable {
+
     PAWN_WHITE(Side.WHITE, PieceType.PAWN),
     KNIGHT_WHITE(Side.WHITE, PieceType.KNIGHT),
     BISHOP_WHITE(Side.WHITE, PieceType.BISHOP),

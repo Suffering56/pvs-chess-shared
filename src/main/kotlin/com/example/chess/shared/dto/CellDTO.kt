@@ -1,6 +1,7 @@
 package com.example.chess.shared.dto
 
 import com.example.chess.shared.enums.Piece
+import java.io.Serializable
 
 /**
  * @author v.peschaniy
@@ -9,4 +10,4 @@ import com.example.chess.shared.enums.Piece
 data class CellDTO(
     val pointDTO: PointDTO,
     val piece: Piece?
-)
+) : Serializable

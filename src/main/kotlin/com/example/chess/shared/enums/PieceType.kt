@@ -1,5 +1,7 @@
 package com.example.chess.shared.enums
 
+import java.io.Serializable
+
 /**
  * @author v.peschaniy
  *      Date: 22.07.2019
@@ -7,7 +9,8 @@ package com.example.chess.shared.enums
 enum class PieceType(
     val value: Int,
     val startColumnIndex: Int = 0
-) {
+) : Serializable {
+
     PAWN(1),
     KNIGHT(3),
     BISHOP(3),

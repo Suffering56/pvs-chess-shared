@@ -1,12 +1,12 @@
 package com.example.chess.shared.enums
 
-import java.lang.UnsupportedOperationException
+import java.io.Serializable
 
 /**
  * @author v.peschaniy
  *      Date: 22.07.2019
  */
-enum class ExtendedSide {
+enum class ExtendedSide : Serializable {
     SIDE_WHITE,
     SIDE_BLACK,
     VIEWER,
