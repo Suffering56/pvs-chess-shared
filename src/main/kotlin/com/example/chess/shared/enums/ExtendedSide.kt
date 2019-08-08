@@ -20,6 +20,8 @@ enum class ExtendedSide : Serializable {
         }
     }
 
+    fun isNormal(): Boolean = (this == SIDE_WHITE || this == SIDE_BLACK)
+
     companion object {
         fun ofSide(side: Side): ExtendedSide {
             return when (side) {

@@ -7,6 +7,7 @@ import java.io.Serializable
  *      Date: 22.07.2019
  */
 enum class GameMode : Serializable {
+    UNSELECTED,
     PVP,
     AI,
     SINGLE

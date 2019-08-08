@@ -1,5 +1,6 @@
 package com.example.chess.shared.dto
 
+import com.example.chess.shared.enums.ExtendedSide
 import com.example.chess.shared.enums.GameMode
 import java.io.Serializable
 
@@ -10,5 +11,6 @@ import java.io.Serializable
 data class GameDTO(
     val id: Long,
     val position: Int,
-    val mode: GameMode
+    val mode: GameMode,
+    val side: ExtendedSide
 ) : Serializable
