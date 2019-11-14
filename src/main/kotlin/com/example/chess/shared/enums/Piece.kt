@@ -8,7 +8,8 @@ import java.io.Serializable
  */
 enum class Piece private constructor(
     val side: Side,
-    val type: PieceType
+    val type: PieceType,
+    val shortName: String = type.shortName
 ) : Serializable {
 
     PAWN_WHITE(Side.WHITE, PieceType.PAWN),

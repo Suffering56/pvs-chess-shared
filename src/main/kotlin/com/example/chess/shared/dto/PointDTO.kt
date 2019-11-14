@@ -1,5 +1,6 @@
 package com.example.chess.shared.dto
 
+import com.example.chess.shared.api.IPoint
 import java.io.Serializable
 
 /**
@@ -7,6 +8,9 @@ import java.io.Serializable
  *      Date: 23.07.2019
  */
 data class PointDTO(
-    val rowIndex: Int,
-    val columnIndex: Int
-) : Serializable
+    override val row: Int,
+    override val col: Int
+) : Serializable, IPoint {
+
+    override fun toDTO() = this
+}
