@@ -5,7 +5,9 @@ package com.example.chess.shared
  *      Date: 22.07.2019
  */
 object Constants {
-    val BOARD_SIZE = 8
-    val ROOK_SHORT_COLUMN_INDEX = 0
-    val ROOK_LONG_COLUMN_INDEX = 7
+    
+    const val BOARD_SIZE = 8
+    const val ROOK_SHORT_COLUMN_INDEX = 0
+    const val ROOK_LONG_COLUMN_INDEX = 7
+    const val POINT_OFFSET = 3
 }

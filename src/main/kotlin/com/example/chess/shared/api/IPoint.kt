@@ -1,5 +1,6 @@
 package com.example.chess.shared.api
 
+import com.example.chess.shared.Constants.POINT_OFFSET
 import com.example.chess.shared.dto.PointDTO
 
 /**
@@ -12,4 +13,8 @@ interface IPoint {
     val col: Int
 
     fun toDTO(): PointDTO
+
+    fun compressToInt(): Int {
+        return (row shl POINT_OFFSET) + col
+    }
 }
