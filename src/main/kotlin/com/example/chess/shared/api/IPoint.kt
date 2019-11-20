@@ -17,4 +17,8 @@ interface IPoint {
     fun compressToInt(): Int {
         return (row shl POINT_OFFSET) + col
     }
+
+    fun isEqual(row: Int, col: Int): Boolean {
+        return this.row == row && this.col == col
+    }
 }
