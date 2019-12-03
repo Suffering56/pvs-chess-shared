@@ -1,6 +1,6 @@
 package com.example.chess.shared.api
 
-import com.example.chess.shared.Constants.POINT_OFFSET
+import com.example.chess.shared.Constants.COMPRESS_POINT_OFFSET
 import com.example.chess.shared.dto.PointDTO
 
 /**
@@ -15,7 +15,7 @@ interface IPoint {
     fun toDTO(): PointDTO
 
     fun compressToInt(): Int {
-        return (row shl POINT_OFFSET) + col
+        return (row shl COMPRESS_POINT_OFFSET) + col
     }
 
     fun isEqual(row: Int, col: Int): Boolean {
