@@ -10,5 +10,6 @@ enum class GameMode : Serializable {
     UNSELECTED,
     PVP,
     AI,
-    SINGLE
+    SINGLE,
+    CONSTRUCTOR
 }
