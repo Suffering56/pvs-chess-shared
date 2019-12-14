@@ -19,4 +19,13 @@ enum class Side(
         WHITE -> BLACK
         BLACK -> WHITE
     }
+
+    companion object {
+        fun ofPosition(position: Int): Side {
+            return if (position % 2 == 0)
+                WHITE
+            else
+                BLACK
+        }
+    }
 }
