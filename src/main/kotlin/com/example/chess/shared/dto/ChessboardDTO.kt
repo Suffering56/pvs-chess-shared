@@ -1,6 +1,7 @@
 package com.example.chess.shared.dto
 
 import com.example.chess.shared.ArrayTable
+import com.example.chess.shared.Constants
 import java.io.Serializable
 
 /**
@@ -12,4 +13,13 @@ data class ChessboardDTO(
     val matrix: ArrayTable<CellDTO>,
     val previousMove: MoveDTO?,
     val checkedPoint: PointDTO?
-) : Serializable
+) : Serializable {
+
+    companion object {
+        fun createEmptyMatrix() = Array(Constants.BOARD_SIZE) row@{ row ->
+            Array(Constants.BOARD_SIZE) cell@{ col ->
+                CellDTO(PointDTO(row, col), null)
+            }
+        }
+    }
+}
