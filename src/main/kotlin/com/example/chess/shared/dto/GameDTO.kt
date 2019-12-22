@@ -13,5 +13,5 @@ data class GameDTO(
     val position: Int,
     val mode: GameMode,
     val side: Side?,
-    val freeSideSlots: List<Side>
+    val freeSide: Side?
 ) : Serializable

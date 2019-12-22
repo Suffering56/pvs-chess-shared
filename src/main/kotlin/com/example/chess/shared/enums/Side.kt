@@ -21,7 +21,7 @@ enum class Side(
     }
 
     companion object {
-        fun ofPosition(position: Int): Side {
+        fun nextTurnSide(position: Int): Side {
             return if (position % 2 == 0)
                 WHITE
             else
