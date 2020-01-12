@@ -17,7 +17,6 @@ data class ChangesDTO(
 
         private const val EMPTY_CHANGES_POSITION = -1
 
-        @JsonIgnore
         val EMPTY: ChangesDTO = ChangesDTO(
             EMPTY_CHANGES_POSITION,
             MoveDTO(
