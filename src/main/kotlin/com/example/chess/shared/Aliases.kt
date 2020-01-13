@@ -6,3 +6,5 @@ package com.example.chess.shared
  */
 
 typealias ArrayTable<T> = Array<Array<T>>
+
+typealias ArrayCoub<T> = Array<Array<Array<T>>>
