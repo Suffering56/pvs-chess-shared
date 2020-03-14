@@ -27,15 +27,61 @@ enum class Piece private constructor(
     KING_BLACK(Side.BLACK, PieceType.KING);
 
     fun isPawn(): Boolean {
-        return type === PieceType.PAWN
+        return isTypeOf(PieceType.PAWN)
     }
 
     fun isKing(): Boolean {
-        return type === PieceType.KING
+        return isTypeOf(PieceType.KING)
     }
 
     fun isRook(): Boolean {
-        return type === PieceType.ROOK
+        return isTypeOf(PieceType.ROOK)
+    }
+
+
+    // isTypeOf операции не vararg, чтобы не создавать массив
+
+    fun isTypeOf(type1: PieceType): Boolean {
+        return type1 == this.type
+    }
+
+    fun isTypeOf(type1: PieceType, type2: PieceType): Boolean {
+        if (type1 == this.type) {
+            return true
+        }
+        if (type2 == this.type) {
+            return true
+        }
+        return false
+    }
+
+    fun isTypeOf(type1: PieceType, type2: PieceType, type3: PieceType): Boolean {
+        if (type1 == this.type) {
+            return true
+        }
+        if (type2 == this.type) {
+            return true
+        }
+        if (type3 == this.type) {
+            return true
+        }
+        return false
+    }
+
+    fun isTypeOf(type1: PieceType, type2: PieceType, type3: PieceType, type4: PieceType): Boolean {
+        if (type1 == this.type) {
+            return true
+        }
+        if (type2 == this.type) {
+            return true
+        }
+        if (type3 == this.type) {
+            return true
+        }
+        if (type4 == this.type) {
+            return true
+        }
+        return false
     }
 
     companion object {
