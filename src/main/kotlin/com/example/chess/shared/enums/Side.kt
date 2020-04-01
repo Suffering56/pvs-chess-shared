@@ -20,6 +20,17 @@ enum class Side(
         BLACK -> WHITE
     }
 
+    fun isEnemyFor(other: Side?): Boolean {
+        if (other == null) {
+            return false
+        }
+        return this != other
+    }
+
+    fun isEnemyFor(other: Piece?): Boolean {
+        return isEnemyFor(other?.side)
+    }
+
     companion object {
         fun nextTurnSide(position: Int): Side {
             return if (position % 2 == 0)

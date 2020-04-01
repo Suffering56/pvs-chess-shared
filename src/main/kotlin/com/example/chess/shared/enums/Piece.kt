@@ -26,18 +26,13 @@ enum class Piece private constructor(
     QUEEN_BLACK(Side.BLACK, PieceType.QUEEN),
     KING_BLACK(Side.BLACK, PieceType.KING);
 
-    fun isPawn(): Boolean {
-        return isTypeOf(PieceType.PAWN)
+    fun isEnemyFor(other: Side?): Boolean {
+        return this.side.isEnemyFor(other)
     }
 
-    fun isKing(): Boolean {
-        return isTypeOf(PieceType.KING)
+    fun isEnemyFor(other: Piece?): Boolean {
+        return this.side.isEnemyFor(other)
     }
-
-    fun isRook(): Boolean {
-        return isTypeOf(PieceType.ROOK)
-    }
-
 
     // isTypeOf операции не vararg, чтобы не создавать массив
 
